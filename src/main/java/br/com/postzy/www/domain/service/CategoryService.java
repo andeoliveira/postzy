@@ -4,6 +4,8 @@ import br.com.postzy.www.domain.Category;
 import br.com.postzy.www.domain.repository.CategoryRepository;
 import br.com.postzy.www.domain.usecase.CategoryUseCase;
 
+import java.util.List;
+
 public class CategoryService implements CategoryUseCase {
     private final CategoryRepository categoryRepository;
 
@@ -14,5 +16,10 @@ public class CategoryService implements CategoryUseCase {
     @Override
     public Category save(Category category) {
         return categoryRepository.save(category);
+    }
+
+    @Override
+    public List<Category> listAll(int page, int size) {
+        return categoryRepository.listAll(page, size, "title");
     }
 }
