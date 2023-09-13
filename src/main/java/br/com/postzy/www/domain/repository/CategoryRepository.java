@@ -6,6 +6,6 @@ import br.com.postzy.www.domain.Post;
 import java.util.List;
 
 public interface CategoryRepository {
-    Category save(Category category);
+    Category save(Category category) throws Exception;
     List<Category> listAll(int page, int size, String propertieOrder);
 }

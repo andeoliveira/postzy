@@ -1,4 +1,4 @@
-package br.com.postzy.www.infrastructure.repository;
+package br.com.postzy.www.infrastructure.repository.post;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

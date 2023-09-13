@@ -7,7 +7,6 @@ public record Category(
         UUID id,
         UUID parenteId,
         String title,
-        String metaTitle,
         String slug,
         String content,
         LocalDateTime createdAt,
@@ -19,6 +18,17 @@ public record Category(
             String content,
             String slug
     ) {
-        this(null, null, title, null, slug, content, null, null, null);
+        this(null, null, title, slug, content, null, null, null);
+    }
+
+    public Category(
+            String title,
+            String content,
+            String slug,
+            LocalDateTime createdAt,
+            LocalDateTime updatedAt,
+            LocalDateTime publishedAt
+    ) {
+        this(null, null, title, content, slug, createdAt, updatedAt, publishedAt);
     }
 }

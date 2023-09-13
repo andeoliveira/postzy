@@ -1,4 +1,4 @@
-package br.com.postzy.www.infrastructure.repository;
+package br.com.postzy.www.infrastructure.repository.post;
 
 import br.com.postzy.www.domain.Post;
 import br.com.postzy.www.domain.repository.PostRepository;
@@ -11,10 +11,10 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Component
-public class DBPostRepository implements PostRepository {
+public class DbPostRepository implements PostRepository {
     private final DbPostJpaReposity dbPostJpaReposity;
 
-    public DBPostRepository(DbPostJpaReposity dbPostJpaReposity) {
+    public DbPostRepository(DbPostJpaReposity dbPostJpaReposity) {
         this.dbPostJpaReposity = dbPostJpaReposity;
     }
 

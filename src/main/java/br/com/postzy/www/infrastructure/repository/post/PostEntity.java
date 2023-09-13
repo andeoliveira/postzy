@@ -1,4 +1,4 @@
-package br.com.postzy.www.infrastructure.repository;
+package br.com.postzy.www.infrastructure.repository.post;
 
 import br.com.postzy.www.domain.Post;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
@@ -17,6 +17,8 @@ public class PostEntity {
     @JdbcTypeCode(SqlTypes.VARCHAR)
     @GeneratedValue
     private UUID id;
+    @Column
+    private UUID parentId;
     @Column
     private String title;
     @Column
@@ -37,14 +39,12 @@ public class PostEntity {
         return id;
     }
 
+    public UUID getParentId() {
+        return parentId;
+    }
     public String getTitle() {
         return title;
     }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     public String getContent() {
         return content;
     }

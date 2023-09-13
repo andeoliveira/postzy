@@ -14,7 +14,7 @@ public class CategoryService implements CategoryUseCase {
     }
 
     @Override
-    public Category save(Category category) {
+    public Category save(Category category) throws Exception {
         return categoryRepository.save(category);
     }
 

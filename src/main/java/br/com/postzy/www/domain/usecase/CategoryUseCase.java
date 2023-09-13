@@ -6,6 +6,6 @@ import br.com.postzy.www.domain.Post;
 import java.util.List;
 
 public interface CategoryUseCase {
-    Category save(Category category);
+    Category save(Category category) throws Exception;
     List<Category> listAll(int page, int size);
 }
