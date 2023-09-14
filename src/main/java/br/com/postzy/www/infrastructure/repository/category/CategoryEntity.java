@@ -35,27 +35,21 @@ public class CategoryEntity {
     @UpdateTimestamp
     @Column(name = "published_at")
     private Timestamp publishedAt;
-
     public UUID getId() {
         return id;
     }
-
     public String getTitle() {
         return title;
     }
-
     public void setTitle(String title) {
         this.title = title;
     }
-
     public String getContent() {
         return content;
     }
-
     public UUID getParentId() {
         return parentId;
     }
-
     public Timestamp getCreatedAt() {
         return createdAt;
     }
