@@ -25,7 +25,7 @@ public class CategoryServiceTest {
 
     @Test
     public void mustSaveTheCategory() throws Exception {
-        Category category = new Category("TestTitle", "TestContent", "testTitle");
+        Category category = new Category("TestTitle", "TestContent", "testTitle", "","");
         Mockito.when(categoryRepository.save(Mockito.any())).thenReturn(category);
         Assertions.assertNotNull(categoryService.save(category));
     }
@@ -33,8 +33,8 @@ public class CategoryServiceTest {
     @Test
     public void mustListAllCategories() throws Exception {
 
-        Category category1 = new Category("Nacional", "Futebol Brasileiro", "categoria-nacional");
-        Category category2 = new Category("Europeu", "Futebol Europeu", "categoria-europeu");
+        Category category1 = new Category("Nacional", "Futebol Brasileiro", "categoria-nacional", "","");
+        Category category2 = new Category("Europeu", "Futebol Europeu", "categoria-europeu","","");
         List<Category> mockCategories = new ArrayList<>();
         mockCategories.add(category1);
         mockCategories.add(category2);

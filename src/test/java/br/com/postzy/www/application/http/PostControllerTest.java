@@ -32,8 +32,8 @@ public class PostControllerTest {
     @Test
     public void whenCreatedPostThenReturnStatusOk() throws Exception {
         ObjectMapper objectMapper = new ObjectMapper();
-        PostRequest postRequest = new PostRequest("Title", "Content");
-        Post post = new Post("TestTitle", "TestContent", "testTitle");
+        PostRequest postRequest = new PostRequest("Title", "Content", "","");
+        Post post = new Post("TestTitle", "TestContent", "testTitle","","");
 
         Mockito.when(postUseCase.publish(Mockito.any())).thenReturn(post);
 
@@ -48,7 +48,7 @@ public class PostControllerTest {
     public void whenPublishNullPointerThenReturnInternalserverError() throws Exception {
         ObjectMapper objectMapper = new ObjectMapper();
         Mockito.when(postUseCase.publish(Mockito.any())).thenThrow(NullPointerException.class);
-        PostRequest postRequest = new PostRequest("Title", "Title");
+        PostRequest postRequest = new PostRequest("Title", "Title", "", "");
         mockMvc.perform(MockMvcRequestBuilders
                         .post("/post/new")
                         .contentType(MediaType.APPLICATION_JSON)

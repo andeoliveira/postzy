@@ -19,7 +19,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 @ExtendWith(SpringExtension.class)
-@WebMvcTest(PostController.class)
+@WebMvcTest(CategoryController.class)
 public class CategoryControllerTest {
     @Autowired
     private MockMvc mockMvc;
@@ -40,7 +40,7 @@ public class CategoryControllerTest {
                         .post("/category/new")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(
-                                new CategoryRequest("Title", "Content","",""))))
+                                new CategoryRequest("TestTitle", "TestContent","",""))))
                         .andExpect(MockMvcResultMatchers.status().isCreated());
 
     }

@@ -9,7 +9,6 @@ import br.com.postzy.www.domain.usecase.PostUseCase;
 import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,7 +20,7 @@ import java.util.stream.Collectors;
 @RestController
 @RequestMapping("/post")
 public class PostController {
-    Logger logger = LoggerFactory.getLogger(RestController.class);
+    Logger logger = LoggerFactory.getLogger(PostController.class);
     private final PostUseCase postUseCase;
     private final PostMapperToDomain mapperToDomain;
     private final PostMapperFromDomain mapperFromDomain;
