@@ -7,6 +7,8 @@ public record CategoryRequest(
         @NotNull
         @NotEmpty
         String title,
-        String content
+        String content,
+        String metaKeywords,
+        String metaDescription
 ) {
 }

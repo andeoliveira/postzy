@@ -26,6 +26,8 @@ public class DbPostRepository implements PostRepository {
                     postEntity.getTitle(),
                     postEntity.getContent(),
                     postEntity.getSlug(),
+                    postEntity.getMetaKeywords(),
+                    postEntity.getMetaDescription(),
                     postEntity.getCreatedAt().toLocalDateTime(),
                     postEntity.getUpdatedAt().toLocalDateTime(),
                     postEntity.getPublishedAt().toLocalDateTime());
@@ -48,6 +50,8 @@ public class DbPostRepository implements PostRepository {
                         p.getTitle(),
                         p.getContent(),
                         p.getSlug(),
+                        p.getMetaKeywords(),
+                        p.getMetaDescription(),
                         p.getCreatedAt().toLocalDateTime(),
                         p.getUpdatedAt().toLocalDateTime(),
                         p.getPublishedAt().toLocalDateTime()

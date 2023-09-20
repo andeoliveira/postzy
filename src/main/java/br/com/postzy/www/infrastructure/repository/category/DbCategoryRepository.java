@@ -26,6 +26,8 @@ public class DbCategoryRepository implements CategoryRepository {
                     categoryEntity.getTitle(),
                     categoryEntity.getContent(),
                     categoryEntity.getSlug(),
+                    categoryEntity.getMetaKeywords(),
+                    categoryEntity.getMetaDescription(),
                     categoryEntity.getCreatedAt().toLocalDateTime(),
                     categoryEntity.getUpdatedAt().toLocalDateTime(),
                     categoryEntity.getPublishedAt().toLocalDateTime());
@@ -50,6 +52,8 @@ public class DbCategoryRepository implements CategoryRepository {
                         c.getTitle(),
                         c.getContent(),
                         c.getSlug(),
+                        c.getMetaKeywords(),
+                        c.getMetaDescription(),
                         c.getCreatedAt().toLocalDateTime(),
                         c.getUpdatedAt().toLocalDateTime(),
                         c.getPublishedAt().toLocalDateTime()

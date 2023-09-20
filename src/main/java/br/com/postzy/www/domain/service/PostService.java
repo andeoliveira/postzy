@@ -27,7 +27,9 @@ public class PostService implements PostUseCase {
                 new Post(
                         post.title(),
                         post.content(),
-                        Slugify.builder().build().slugify(post.title())
+                        Slugify.builder().build().slugify(post.title()),
+                        post.metaKeywords(),
+                        post.metaDescription()
                 )
         );
 

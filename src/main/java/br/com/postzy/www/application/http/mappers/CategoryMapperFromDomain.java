@@ -16,6 +16,8 @@ public class CategoryMapperFromDomain implements Function<Category, CategoryResp
                 category.title(),
                 category.content(),
                 category.slug(),
+                category.metaKeywords(),
+                category.metaDescription(),
                 category.createdAt().toString(),
                 category.updatedAt().toString(),
                 category.publishedAt().toString()

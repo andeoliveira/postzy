@@ -8,6 +8,8 @@ public record Category(
         UUID parenteId,
         String title,
         String slug,
+        String metaKeywords,
+        String metaDescription,
         String content,
         LocalDateTime createdAt,
         LocalDateTime updatedAt,
@@ -16,19 +18,23 @@ public record Category(
     public Category(
             String title,
             String content,
-            String slug
+            String slug,
+            String metaKeywords,
+            String metaDescription
     ) {
-        this(null, null, title, slug, content, null, null, null);
+        this(null, null, content, title, slug, metaKeywords, metaDescription, null, null, null);
     }
 
     public Category(
             String title,
             String content,
             String slug,
+            String metaKeywords,
+            String metaDescription,
             LocalDateTime createdAt,
             LocalDateTime updatedAt,
             LocalDateTime publishedAt
     ) {
-        this(null, null, title, content, slug, createdAt, updatedAt, publishedAt);
+        this(null, null, title, content, slug, metaKeywords, metaDescription, createdAt, updatedAt, publishedAt);
     }
 }

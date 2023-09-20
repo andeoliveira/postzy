@@ -8,6 +8,8 @@ public record Post(
         String title,
         String content,
         String slug,
+        String metaKeywords,
+        String metaDescription,
         LocalDateTime createdAt,
         LocalDateTime updatedAt,
         LocalDateTime publishedAt) {
@@ -15,18 +17,22 @@ public record Post(
     public Post(
             String title,
             String content,
-            String slug) {
-        this(null, title, content, slug, null, null, null);
+            String slug,
+            String metaKeywords,
+            String metaDescription) {
+        this(null, title, content, slug, metaKeywords, metaDescription, null, null, null);
     }
 
     public Post(
             String title,
             String content,
             String slug,
+            String metaKeywords,
+            String metaDescription,
             LocalDateTime createdAt,
             LocalDateTime updatedAt,
             LocalDateTime publishedAt) {
-        this(null, title, content, slug, createdAt, updatedAt, publishedAt);
+        this(null, title, content, slug, metaKeywords, metaDescription, createdAt, updatedAt, publishedAt);
     }
 
 

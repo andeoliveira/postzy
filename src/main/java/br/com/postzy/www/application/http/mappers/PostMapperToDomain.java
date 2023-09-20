@@ -14,8 +14,9 @@ public class PostMapperToDomain implements Function<PostRequest, Post> {
         return new Post(
                 postRequest.title(),
                 postRequest.content(),
-                Slugify.builder().build().slugify(postRequest.title())
-        );
+                Slugify.builder().build().slugify(postRequest.title()),
+                postRequest.metaKeywords(),
+                postRequest.metaDescription());
     }
 }
 

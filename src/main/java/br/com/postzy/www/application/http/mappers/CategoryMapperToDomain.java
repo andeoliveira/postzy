@@ -16,7 +16,9 @@ public class CategoryMapperToDomain implements Function<CategoryRequest, Categor
         return new Category(
                 categoryRequest.title(),
                 categoryRequest.content(),
-                Slugify.builder().build().slugify(categoryRequest.title())
+                Slugify.builder().build().slugify(categoryRequest.title()),
+                categoryRequest.metaKeywords(),
+                categoryRequest.metaDescription()
         );
     }
 }

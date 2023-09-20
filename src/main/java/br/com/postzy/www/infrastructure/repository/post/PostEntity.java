@@ -25,6 +25,10 @@ public class PostEntity {
     private String content;
     @Column
     private String slug;
+    @Column
+    String metaKeywords;
+    @Column
+    String metaDescription;
     @CreationTimestamp
     @Column(name = "created_at")
     private Timestamp createdAt;
@@ -60,10 +64,21 @@ public class PostEntity {
     public String getSlug() {
         return slug;
     }
+
+    public String getMetaKeywords() {
+        return metaKeywords;
+    }
+
+    public String getMetaDescription() {
+        return metaDescription;
+    }
+
     public PostEntity(Post post) {
         this.content = post.content();
         this.title = post.title();
         this.slug = post.slug();
+        this.metaKeywords = post.metaKeywords();
+        this.metaDescription = post.metaDescription();
     }
 
 }

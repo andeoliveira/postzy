@@ -14,6 +14,8 @@ public class PostMapperFromDomain implements Function<Post, PostResponse> {
                 post.title(),
                 post.content(),
                 post.slug(),
+                post.metaKeywords(),
+                post.metaKeywords(),
                 post.createdAt().toString(),
                 post.updatedAt().toString(),
                 post.publishedAt().toString()

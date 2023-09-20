@@ -26,6 +26,10 @@ public class CategoryEntity {
     private String content;
     @Column
     private String slug;
+    @Column
+    private String metaKeywords;
+    @Column
+    private String metaDescription;
     @CreationTimestamp
     @Column(name = "created_at")
     private Timestamp createdAt;
@@ -68,10 +72,21 @@ public class CategoryEntity {
     public String getSlug() {
         return slug;
     }
+
+    public String getMetaKeywords() {
+        return metaKeywords;
+    }
+
+    public String getMetaDescription() {
+        return metaDescription;
+    }
+
     public CategoryEntity(Category category) {
         this.content = category.content();
         this.title = category.title();
         this.slug = category.slug();
+        this.metaKeywords = category.metaKeywords();
+        this.metaDescription = category.metaDescription();
         this.parentId = category.parenteId();
     }
 

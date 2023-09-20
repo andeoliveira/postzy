@@ -36,13 +36,13 @@ public class CategoryControllerTest {
     public void whenCreatedCategoryThenReturnStatusOk() throws Exception {
         ObjectMapper objectMapper = new ObjectMapper();
         Mockito.when(categoryUseCase.save(Mockito.any())).thenReturn(
-                new Category("TestTitle", "TestContent", "testTitle"));
+                new Category("TestTitle", "TestContent", "testTitle", "", ""));
 
         mockMvc.perform(MockMvcRequestBuilders
                         .post("/category/new")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(
-                                new CategoryRequest("Title", "Content"))))
+                                new CategoryRequest("Title", "Content","",""))))
                         .andExpect(MockMvcResultMatchers.status().isCreated());
 
     }
@@ -55,7 +55,7 @@ public class CategoryControllerTest {
                         .post("/category/new")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(
-                                new CategoryRequest("Title", "Title"))))
+                                new CategoryRequest("Title", "Title", "", ""))))
                 .andExpect(MockMvcResultMatchers.status().isInternalServerError());
 
     }

@@ -8,6 +8,8 @@ public record PostRequest(
         @NotEmpty
         String title,
         @NotNull
-        String content
+        String content,
+        String metaKeywords,
+        String metaDescription
 ) {
 }
