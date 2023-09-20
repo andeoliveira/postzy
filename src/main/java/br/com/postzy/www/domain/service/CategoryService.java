@@ -3,9 +3,10 @@ package br.com.postzy.www.domain.service;
 import br.com.postzy.www.domain.Category;
 import br.com.postzy.www.domain.repository.CategoryRepository;
 import br.com.postzy.www.domain.usecase.CategoryUseCase;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class CategoryService implements CategoryUseCase {
     private final CategoryRepository categoryRepository;
 

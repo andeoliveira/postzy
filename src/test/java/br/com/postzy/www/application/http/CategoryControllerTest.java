@@ -1,13 +1,10 @@
 package br.com.postzy.www.application.http;
 
 import br.com.postzy.www.application.http.data.CategoryRequest;
-import br.com.postzy.www.application.http.data.PostRequest;
 import br.com.postzy.www.application.http.mappers.CategoryMapperFromDomain;
 import br.com.postzy.www.application.http.mappers.CategoryMapperToDomain;
 import br.com.postzy.www.domain.Category;
-import br.com.postzy.www.domain.Post;
 import br.com.postzy.www.domain.usecase.CategoryUseCase;
-import br.com.postzy.www.infrastructure.repository.category.CategoryEntity;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -32,6 +29,7 @@ public class CategoryControllerTest {
     private CategoryMapperToDomain categoryMapperToDomain;
     @MockBean
     private CategoryMapperFromDomain categoryMapperFromDomain;
+
     @Test
     public void whenCreatedCategoryThenReturnStatusOk() throws Exception {
         ObjectMapper objectMapper = new ObjectMapper();
